@@ -1,3 +1,7 @@
+# GitHub
+
+https://github.com/julio-cf/SCTECMiniProjetoAvaliativo02
+
 # Como executar o projeto
 
 Execute os scripts SQL na seguinte ordem no seu SGBD:
@@ -17,6 +21,8 @@ Execute os scripts SQL na seguinte ordem no seu SGBD:
 5. **`05-perguntas.sql`**: Contém as consultas SQL estruturadas para responder às cinco perguntas de negócio exigidas pela diretoria.
 
 # Apresentação em vídeo
+
+https://drive.google.com/file/d/13EZMNha03qMYzkgQ1okYrfIRpWo9Ap_h/view?usp=sharing
 
 # Contexto do Case
 
