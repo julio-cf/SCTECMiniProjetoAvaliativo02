@@ -32,9 +32,15 @@ SELECT
         ELSE CAST(DATE_FORMAT(DATE(p.`DtEntregaCliente`), '%Y%m%d') AS SIGNED) 
     END AS sk_tempo_entrega,
     
+    CASE 
+        WHEN dl.sk_loja IS NULL THEN -1 
+        ELSE dl.sk_loja 
+    END AS sk_loja,
     
-    IFNULL(dl.sk_loja, -1) AS sk_loja,
-    IFNULL(dc.sk_categoria, -1) AS sk_categoria,
+    CASE 
+        WHEN dc.sk_categoria IS NULL THEN -1 
+        ELSE dc.sk_categoria 
+    END AS sk_categoria,
     
     -- Desconto
     CASE 
