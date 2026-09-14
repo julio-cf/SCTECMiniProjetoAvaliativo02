@@ -1,3 +1,23 @@
+# Como executar o projeto
+
+Execute os scripts SQL na seguinte ordem no seu SGBD:
+
+1. **`01-carga-staging.sql`**: Cria o banco de dados `dw_pata_amiga` e carrega as tabelas brutas da área de staging (`stg_pedido`, `stg_loja`, `stg_loja_praca`).
+
+
+2. **`02-dimensoes-prontas.sql`**: Cria a estrutura de todas as tabelas do modelo estrela e insere os dados já prontos nas tabelas `dim_tempo` e `dim_loja`.
+
+
+3. **`03-dimensoes.sql`**: Limpa e carrega os dados nas dimensões faltantes (`dim_categoria`, `dim_praca`) e na tabela de relacionamento (`bridge_loja_praca`).
+
+
+4. **`04-fato.sql`**: Realiza o tratamento final (ETL) e carrega os 4.044 pedidos na tabela central `fato_pedido`, conectando ela às chaves das dimensões.
+
+
+5. **`05-perguntas.sql`**: Contém as consultas SQL estruturadas para responder às cinco perguntas de negócio exigidas pela diretoria.
+
+# Apresentação em vídeo
+
 # Contexto do Case
 
 O projeto resolve um problema de integração de dados da Pata Amiga, uma rede catarinense de pet shops. O desafio foi unificar os dados de três sistemas que não se conversam (e-commerce, cadastro de franquias e planilhas de expansão) que possuíam diferentes padrões, para responder a cinco perguntas estratégicas de negócio.
