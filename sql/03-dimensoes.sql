@@ -80,11 +80,11 @@ FROM stg_pedido;
 
 TRUNCATE TABLE dim_praca;
 
--- 1. Insere a linha -1 da dim_praca (para tratar dados faltantes)
+-- Insere a linha -1 da dim_praca (para tratar dados faltantes)
 INSERT INTO dim_praca (sk_praca, cod_praca, nome_praca, regional, domicilios_com_pet)
 VALUES (-1, 'N/I', 'Nao Informado', 'Nao Informado', NULL);
 
--- 2. Insere as praças reais agrupando as 48 linhas da origem em 12 praças únicas
+-- Insere as praças reais agrupando as 48 linhas da origem em 12 praças únicas
 INSERT INTO dim_praca (cod_praca, nome_praca, regional, domicilios_com_pet)
 SELECT 
     `CodPraca`,
